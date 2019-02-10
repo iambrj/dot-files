@@ -37,3 +37,10 @@ imap <C-v> <C-r><C-o>+
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+" Ctrl-j/k inserts blank line below/above, and Alt-j/k deletes.
+nnoremap <silent><A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><A-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
