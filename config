@@ -22,7 +22,7 @@ bindsym $mod+slash split vertical;;exec $term
 
 # #---Starting External Scripts---# #
 # Setting the background and colorscheme:
-exec_always --no-startup-id wal -i ~/.config/wall.png
+exec --no-startup-id feh  --bg-scale ~/.config/wall.jpg
 # Torrent daemon:
 #exec --no-startup-id transmission-daemon
 # Unclutter makes the mouse invisible after a brief period
@@ -113,7 +113,7 @@ bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
 bindsym $mod+Shift+a		exec --no-startup-id gnome-alsamixer
 
 bindsym $mod+d			exec --no-startup-id dmenu_run
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+d		gaps inner current set 10; gaps outer current set 10
 
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f	exec --no-startup-id firefox-developer-edition
@@ -215,7 +215,7 @@ bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
 bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
 # For screenshots and recording
-bindsym $mod+Shift+s 			exec --no-startup-id scrot
+bindsym $mod+Shift+s 			exec --no-startup-id gnome-screenshot
 bindsym Shift+Print 		exec --no-startup-id scrot -u
 bindsym $mod+Print		exec --no-startup-id dmenurecord
 bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
@@ -224,9 +224,12 @@ bindsym XF86Launch1		exec $stoprec & xset dpms force off
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # increase screen brightness
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1 # increase screen brightness
 
 # Volume controls
+bindysm XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindysm XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindysm XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindysm XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
