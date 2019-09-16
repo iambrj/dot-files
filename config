@@ -1,12 +1,12 @@
 # vim: filetype=i3
 # export BROWSER="firefox"
-# export TERMINAL="st"
+# export TERMINAL="urxvt"
 
 # #---Basic Definitions---# #
 # reload config
 bindsym $mod+Shift+p reload
 # exit i3
-bind sym $mod+esc "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bind sym $mod+Shift+e "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
 gaps inner 15
@@ -102,7 +102,7 @@ bindsym $mod+v			exec $term -e vim
 bindsym $mod+Shift+v	exec $term -e sudo vim
 
 bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t		gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+i 			exec $term -e htop
 bindsym $mod+Shift+i		exec --no-startup-id "bash ~/.scripts/i3resize up"
@@ -118,8 +118,9 @@ bindsym $mod+Shift+d		gaps inner current set 10; gaps outer current set 10
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f	exec --no-startup-id firefox-developer-edition
 
-bindsym $mod+g			workspace prev
-bindsym $mod+Shift+g		exec --no-startup-id gimp; workspace $ws5
+bindsym $mod+w	exec --no-startup-id qutebrowser
+
+bindsym $mod+m	exec --no-startup-id vlc
 
 bindsym $mod+h			focus left
 bindsym $mod+Shift+h		move left 30
@@ -233,3 +234,9 @@ bindysm XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindysm XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindysm XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindysm XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Lock the screen
+bindsym $mod+F9	exec --no-startup-id i3lock --ringcolor=b88005aa \\
+--keyhlcolor=edb600bb --insidevercolor=ffbb00aa --ringvercolor=b88005aa \\
+--timestr="%H:%M:%S" --time-align=0 --timecolor=b88005aa -n \\
+-i ~/.config/i3/lockscreen.png -k --ring-width=5.0
