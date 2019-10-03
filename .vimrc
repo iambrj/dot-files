@@ -1,9 +1,9 @@
 " Vundle
-set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+"Plugin 'valloric/youcompleteme'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -52,6 +52,7 @@ autocmd FileType java set cindent
 
 " .md files
 autocmd FileType md set textwidth=80
+set spell
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
