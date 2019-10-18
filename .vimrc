@@ -3,7 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'valloric/youcompleteme'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -52,7 +51,12 @@ autocmd FileType java set cindent
 
 " .md files
 autocmd FileType md set textwidth=80
-set spell
+
+set  spell
+set textwidth=80
+set noautoindent
+set nocindent
+set nofoldenable
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
@@ -60,6 +64,9 @@ imap <C-v> <C-r><C-o>+
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+
+" .hs files
+autocmd FileType hs setlocal shiftwidth=2 softtabstop=2 expandtab tabstop=2
 
 " Ctrl-j/k inserts blank line below/above, and Alt-j/k deletes.
 nnoremap <silent><A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
@@ -73,4 +80,5 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Enable IndentGuide on startup
 " let g:indent_guides_enable_on_vim_startup = 1
 
-" 
+" Load skeleton for LaTeX files
+autocmd BufNewFile *.tex 0r ~/.vim/skeletons/skeleton.tex
