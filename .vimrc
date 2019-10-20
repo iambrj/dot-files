@@ -6,6 +6,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'lervag/vimtex'
 call vundle#end()
 
 " Config starts here
@@ -82,3 +83,8 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Load skeleton for LaTeX files
 autocmd BufNewFile *.tex 0r ~/.vim/skeletons/skeleton.tex
+" Load skeleton for cpp files
+autocmd BufNewFile *.cpp 0r ~/.vim/skeletons/skeleton.cpp
+" Load skeleton for c files
+autocmd BufNewFile *.c 0r ~/.vim/skeletons/skeleton.c
+
