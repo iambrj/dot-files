@@ -1,6 +1,6 @@
 # vim: filetype=i3
 # export BROWSER="firefox"
-# export TERMINAL="urxvt"
+# export TERMINAL="xfce4-terminal"
 
 # #---Basic Definitions---# #
 # reload config
@@ -11,7 +11,7 @@ bind sym $mod+Shift+e "i3-nagbar -t warning -m 'You pressed the exit shortcut. D
 for_window [class="^.*"] border pixel 2
 gaps inner 15
 gaps outer 15
-set $term --no-startup-id urxvt
+set $term --no-startup-id xfce4-terminal
 set $mod Mod4
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
