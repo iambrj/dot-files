@@ -1,0 +1,5 @@
+[user]
+	name = iambrj
+	email = joshibharathiramana@gmail.com
+[include]
+	path = ~/.gitalias.txt
