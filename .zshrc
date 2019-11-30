@@ -107,7 +107,20 @@ alias up="cd .."
 alias connect="rclone --vfs-cache-mode writes mount iiit: ~/iiit &"
 alias qemu="qemu-system-x86_64"
 
+# use vi key bindings in the shell
 set -o vi
+
+# history search
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
+# unwanted vi-like behaviour
+bindkey -v '^?' backward-delete-char
+
+# common shortcuts
+bindkey "^W" backward-kill-word
+bindkey "^H" backward-delete-char
+bindkey "^U" backward-kill-line
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
