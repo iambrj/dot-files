@@ -57,6 +57,8 @@ client.urgent		$darkred	$darkred	$black		$darkred		$darkred
 client.background $black
 
 bar {
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position top
 	font pango:mono 9
 	colors {
 			background $darkblack
@@ -67,8 +69,6 @@ bar {
       			inactive_workspace $darkblack $darkblack $white
         		urgent_workspace   $darkblack $darkblack $white
 		}
-	status_command i3blocks
-	position top
 	mode dock
 	modifier None
 }
@@ -101,6 +101,8 @@ bindsym $mod+Shift+r		exec $term -e sudo ranger /
 bindsym $mod+v			exec $term -e vim
 bindsym $mod+Shift+v	exec $term -e sudo vim
 
+bindsym $mod+e			exec emacs
+
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 0; gaps outer current set 0
 
@@ -116,7 +118,7 @@ bindsym $mod+d			exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d		gaps inner current set 10; gaps outer current set 10
 
 bindsym $mod+f			fullscreen toggle
-bindsym $mod+Shift+f	exec --no-startup-id firefox-developer-edition
+bindsym $mod+Shift+f	exec --no-startup-id firefox
 
 bindsym $mod+w	exec --no-startup-id qutebrowser
 
@@ -240,3 +242,4 @@ bindsym $mod+F9	exec --no-startup-id i3lock --ringcolor=b88005aa \\
 --keyhlcolor=edb600bb --insidevercolor=ffbb00aa --ringvercolor=b88005aa \\
 --timestr="%H:%M:%S" --time-align=0 --timecolor=b88005aa -n \\
 -i ~/.config/i3/lockscreen.png -k --ring-width=5.0
+
