@@ -114,8 +114,8 @@ bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
 
 bindsym $mod+Shift+a		exec --no-startup-id gnome-alsamixer
 
-bindsym $mod+d			exec --no-startup-id dmenu_run
-bindsym $mod+Shift+d		gaps inner current set 10; gaps outer current set 10
+bindsym $mod+d			exec --no-startup-id rofi -mode "run#window#drun" -show\
+						drun -matching regex -show-icons -theme softsidebar\
 
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f	exec --no-startup-id firefox
