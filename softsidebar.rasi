@@ -50,6 +50,8 @@
 
     orientation: horizontal;
     children: [mainbox, dummy];
+
+    font: "hack 10";
 }
 
 #dummy {
