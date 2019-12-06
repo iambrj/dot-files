@@ -1,5 +1,5 @@
 # vim: filetype=i3
-# export BROWSER="firefox"
+# export BROWSER="chromium"
 # export TERMINAL="xfce4-terminal"
 
 # #---Basic Definitions---# #
@@ -118,7 +118,7 @@ bindsym $mod+d			exec --no-startup-id rofi -mode "run#window#drun" -show\
 						drun -matching regex -show-icons -theme softsidebar\
 
 bindsym $mod+f			fullscreen toggle
-bindsym $mod+Shift+f	exec --no-startup-id firefox
+bindsym $mod+Shift+f	exec --no-startup-id chromium
 
 bindsym $mod+w	exec --no-startup-id qutebrowser
 
