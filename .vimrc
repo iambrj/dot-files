@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
+Plugin 'neovimhaskell/haskell-vim'
 call vundle#end()
 
 " Remap autocomplete to ctrl-space
@@ -214,15 +215,17 @@ let g:airline_symbols.linenr = ''
 "set background=dark
 filetype plugin indent on
 syntax on
+set tabstop=2 shiftwidth=2 expandtab
 set number
 set hidden
-set shiftwidth=4
-set tabstop=4
 set hlsearch
 set relativenumber
 set splitbelow
 set splitright
 set laststatus=2
+set spell
+set textwidth=80
+set nofoldenable
 
 " shortcut to move among splits
 map <C-h> <C-w>h
@@ -254,11 +257,6 @@ autocmd FileType java set cindent
 " .md files
 autocmd FileType md set textwidth=80
 
-set  spell
-set textwidth=80
-set noautoindent
-set nocindent
-set nofoldenable
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
@@ -266,9 +264,6 @@ imap <C-v> <C-r><C-o>+
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-
-" .hs files
-autocmd FileType hs setlocal shiftwidth=2 softtabstop=2 expandtab tabstop=2
 
 " Ctrl-j/k inserts blank line below/above, and Alt-j/k deletes.
 nnoremap <silent><A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
