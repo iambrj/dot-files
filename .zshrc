@@ -104,8 +104,10 @@ source $ZSH/oh-my-zsh.sh
 alias v="vim"
 alias g="gcc"
 alias up="cd .."
+alias c="cd"
 alias connect="rclone --vfs-cache-mode writes mount iiit: ~/iiit &"
 alias qemu="qemu-system-x86_64"
+alias h="history | tail"
 
 # use vi key bindings in the shell
 set -o vi
@@ -124,3 +126,10 @@ bindkey "^U" backward-kill-line
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+JAVA_HOME="/usr/lib/jvm/default"
+CLASSPATH=.:"${JAVA_HOME}/lib/dt.jar":"${JAVA_HOME}/lib/tools.jar"
+CHECKERFRAMEWORK="/home/hogfather/temp/checker-framework"
+alias javacheck='$CHECKERFRAMEWORK/checker/bin/javac'
+eval "$(fasd --init auto)"
+alias i="vim ~/docs/til/README.md; git --git-dir ~/docs/til/.git commit -a"
