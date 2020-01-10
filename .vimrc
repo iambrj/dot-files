@@ -1,3 +1,5 @@
+if has('python3')
+endif
 " Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -215,7 +217,7 @@ let g:airline_symbols.linenr = ''
 "set background=dark
 filetype plugin indent on
 syntax on
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set number
 set hidden
 set hlsearch
@@ -261,7 +263,7 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
-filetype plugin indent on
+filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
