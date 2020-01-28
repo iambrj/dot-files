@@ -6,7 +6,7 @@ keysym Caps_Lock = Control_L
 add Lock = Caps_Lock
 add Control = Control_L
 ! Use fn + hjkl for navigation
-keycode 151 = Mode_switch
+keycode 64 = Mode_switch
 keysym h = h H Left 
 keysym l = l L Right
 keysym k = k K Up
