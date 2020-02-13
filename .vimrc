@@ -14,6 +14,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'neovimhaskell/haskell-vim'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 
 " Remap autocomplete to ctrl-space
@@ -228,6 +229,7 @@ set laststatus=2
 set spell
 set textwidth=80
 set nofoldenable
+set whichwrap+=<,>,h,l,[,] " go to next/previous line from end/beginning
 
 " shortcut to move among splits
 map <C-h> <C-w>h
