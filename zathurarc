@@ -9,20 +9,20 @@ set scroll-page-aware true
 
 set font "Inconsolata 16"
 
-set default-bg "#181a1b"
+set default-bg "#282828"
 set default-fg "#d5d2be"
 set inputbar-bg "#3f3f3f"
 set inputbar-fg "#d5d2be"
 set statusbar-bg "#2b2b2b"
 set statusbar-fg "#d5d2be"
 
-set index-bg "#3f3f3f"
-set index-fg "#d5d2be"
+set index-bg "#282828"
+set index-fg "#fbf1c7"
 set index-active-bg "#4f4f4f"
 set index-active-fg "#d5d2be"
 
 set recolor true
-set recolor-lightcolor "#eeeee"
-set recolor-darkcolor "#11111"
+set recolor-lightcolor "#282828"
+set recolor-darkcolor "#fbf1c7"
 
 set guioptions none
