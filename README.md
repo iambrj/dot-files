@@ -1,4 +1,4 @@
 # dot-files
 All my precious dot files
-
-![precious](https://user-images.githubusercontent.com/29101670/44939662-beac3a00-ada4-11e8-9d41-cb40e02dceed.gif)
+# Screenshot
+![precious](https://user-images.githubusercontent.com/29101670/74470840-3d2b6780-4ec5-11ea-844c-68e11e372b75.png)
