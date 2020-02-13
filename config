@@ -22,7 +22,7 @@ bindsym $mod+slash split vertical;;exec $term
 
 # #---Starting External Scripts---# #
 # Setting the background and colorscheme:
-exec --no-startup-id feh  --bg-scale ~/.config/wall.jpg
+exec --no-startup-id feh  --bg-scale ~/temp/darkback.jpeg
 # Torrent daemon:
 #exec --no-startup-id transmission-daemon
 # Unclutter makes the mouse invisible after a brief period
@@ -49,22 +49,22 @@ set_from_resource $darkwhite	color7  #000000
 set_from_resource $white	color15 #000000
 set $transparent		#00000000
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
-client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
-client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-client.background $black
+#                       BORDER		BACKGROUND		TEXT		INDICATOR   	CHILD_BORDER
+client.focused			$red			$red		$magenta	$darkmagenta    #928374
+client.unfocused		$transparent	$blue		$white		$darkblue		$darkblack
+client.focused_inactive	$transparent	#928374		$white		$darkblue		$darkblack
+client.urgent			$darkred		$darkred	$black		$darkred		$darkred
+client.background 		$black
 
 bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
 	font pango:mono 9
 	colors {
-			background $darkblack
+			background #1c1c1c
 			statusline $darkwhite
 			separator $cyan
-			focused_workspace  $blue $darkblue $darkblack
+			focused_workspace  #928374 #689d6a #1c1c1c
         		active_workspace   $blue $blue $darkwhite
       			inactive_workspace $darkblack $darkblack $white
         		urgent_workspace   $darkblack $darkblack $white
@@ -241,5 +241,7 @@ bindysm XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym $mod+F9	exec --no-startup-id i3lock --ringcolor=b88005aa \\
 --keyhlcolor=edb600bb --insidevercolor=ffbb00aa --ringvercolor=b88005aa \\
 --timestr="%H:%M:%S" --time-align=0 --timecolor=b88005aa -n \\
--i ~/.config/i3/lockscreen.png -k --ring-width=5.0
+-i ~/.config/i3/lockscreen.png -k --ring-width=5.0; exec --no-startup-id xset dpms force off
 
+# Turn off screen
+bindsym $mod+F8 exec --no-startup-id xset dpms force off
