@@ -55,7 +55,7 @@ font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
 #                       BORDER		BACKGROUND		TEXT		INDICATOR   	CHILD_BORDER
 client.focused			#d65d0e			#fe8019		#1c1c1c     $darkmagenta    #928374
 client.unfocused		#076678     	#458588		#1c1c1c		$darkblue		$darkblack
-client.focused_inactive	$transparent	#928374		$white		$darkblue		$darkblack
+client.focused_inactive	#d65d0e			#fe8019		#1c1c1c		$darkblue		$darkblack
 client.urgent			$darkred		$darkred	$black		$darkred		$darkred
 client.background 		$black
 
