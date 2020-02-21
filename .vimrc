@@ -11,11 +11,16 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'lervag/vimtex'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'valloric/youcompleteme'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'morhetz/gruvbox'
+Plugin 'Chiel92/vim-autoformat'
 call vundle#end()
+
+colorscheme gruvbox
+
 
 " Remap autocomplete to ctrl-space
 if has("gui_running")
@@ -215,7 +220,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 " Config starts here
-"set background=dark
+set background=dark
 filetype plugin indent on
 syntax on
 set tabstop=4 shiftwidth=4 expandtab
@@ -225,7 +230,7 @@ set hlsearch
 set relativenumber
 set splitbelow
 set splitright
-set laststatus=2
+"set laststatus=2
 set spell
 set textwidth=80
 set nofoldenable
@@ -287,3 +292,6 @@ autocmd BufNewFile *.tex 0r ~/.vim/skeletons/skeleton.tex
 autocmd BufNewFile *.cpp 0r ~/.vim/skeletons/skeleton.cpp
 " Load skeleton for c files
 autocmd BufNewFile *.c 0r ~/.vim/skeletons/skeleton.c
+
+" Match vim background with terminal background
+hi Normal ctermbg=234
