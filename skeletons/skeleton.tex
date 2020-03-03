@@ -1,5 +1,12 @@
 \documentclass[titlepage, 12pt]{article}
 \usepackage[parfill]{parskip}
+\usepackage{amsmath}
+\usepackage{mdframed}
+\usepackage{xcolor}
+
+\newenvironment{definition}[2][Definition]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
 
 \begin{document}
 
