@@ -15,12 +15,11 @@ Plugin 'w0rp/ale'
 Plugin 'valloric/youcompleteme'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'vimwiki/vimwiki'
-Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim'
 Plugin 'Chiel92/vim-autoformat'
 call vundle#end()
 
-colorscheme gruvbox
-
+colorscheme dracula
 
 " Remap autocomplete to ctrl-space
 if has("gui_running")
@@ -295,3 +294,6 @@ autocmd BufNewFile *.c 0r ~/.vim/skeletons/skeleton.c
 
 " Match vim background with terminal background
 hi Normal ctermbg=234
+
+set scrolloff=9
+set incsearch
