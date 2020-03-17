@@ -297,3 +297,4 @@ hi Normal ctermbg=234
 
 set scrolloff=9
 set incsearch
+set mouse=a
