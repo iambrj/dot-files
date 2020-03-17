@@ -13,17 +13,20 @@
     urlcolor=blue,
 }
 
+\newcounter{definition}
 \newenvironment{definition}[1][Definition]
 {\vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=red!20]
-\textbf{#1}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{5pt}}
+\refstepcounter{definition}\textbf{#1 \thedefinition}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
 
+\newcounter{proposition}
 \newenvironment{proposition}[1][Proposition] {
 \vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=blue!20]
-\textbf{#1}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{5pt}}
+\refstepcounter{proposition}\textbf{#1 \theproposition}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
 
+\newcounter{theorem}
 \newenvironment{theorem}[1][Theorem] {
 \vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=green!20]
-\textbf{#1}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{5pt}}
+\refstepcounter{theorem}\textbf{#1 \thetheorem}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
 
 \begin{document}
 
