@@ -1,10 +1,11 @@
 \documentclass[titlepage, 12pt]{article}
 \usepackage[parfill]{parskip}
 \usepackage{amsmath}
-\usepackage{mdframed}
 \usepackage{xcolor}
 \usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
 
 \hypersetup{
     colorlinks=true,
@@ -13,20 +14,14 @@
     urlcolor=blue,
 }
 
-\newcounter{definition}
-\newenvironment{definition}[1][Definition]
-{\vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=red!20]
-\refstepcounter{definition}\textbf{#1 \thedefinition}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
+\newtcbtheorem[]{definition}{Definition}%
+{colback=magenta!5,colframe=magenta!100!black,fonttitle=\bfseries}{th}
 
-\newcounter{proposition}
-\newenvironment{proposition}[1][Proposition] {
-\vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=blue!20]
-\refstepcounter{proposition}\textbf{#1 \theproposition}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
+\newtcbtheorem[]{proposition}{Proposition}%
+{colback=cyan!5,colframe=cyan!100!black,fonttitle=\bfseries}{th}
 
-\newcounter{theorem}
-\newenvironment{theorem}[1][Theorem] {
-\vspace{5pt}\mdfsetup{roundcorner=5pt}\begin{mdframed}[backgroundcolor=green!20]
-\refstepcounter{theorem}\textbf{#1 \thetheorem}\vspace{-10pt}\\\line(1, 0){370}\\} {  \end{mdframed}\vspace{-5pt}}
+\newtcbtheorem[]{theorem}{Theorem}%
+{colback=orange!5,colframe=orange!100!black,fonttitle=\bfseries}{th}
 
 \begin{document}
 
