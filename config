@@ -8,11 +8,12 @@ bindsym $mod+Shift+p reload
 # exit i3
 bind sym $mod+Shift+e "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Needed for i3-gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 gaps inner 15
 gaps outer 15
-set $term --no-startup-id xfce4-terminal
+set $term --no-startup-id terminator
 set $mod Mod4
+floating_modifier Mod4
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $hibernate sudo -A systemctl suspend
@@ -22,7 +23,10 @@ bindsym $mod+slash split vertical;;exec $term
 
 # #---Starting External Scripts---# #
 # Setting the background and colorscheme:
-exec --no-startup-id feh  --bg-scale ~/temp/darkback.jpeg
+exec --no-startup-id feh  --bg-scale ~/wall/darklambda.jpg
+
+# Compton daemon:
+exec --no-startup-id picom
 # Torrent daemon:
 #exec --no-startup-id transmission-daemon
 # Unclutter makes the mouse invisible after a brief period
@@ -53,9 +57,9 @@ set $transparent		#00000000
 
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 9
 #                       BORDER		BACKGROUND		TEXT		INDICATOR   	CHILD_BORDER
-client.focused			#d65d0e			#fe8019		#1c1c1c     $darkmagenta    #928374
+client.focused			#6314ff			#5600ff		#1c1c1c     $darkmagenta    #6e19ff
 client.unfocused		#076678     	#458588		#1c1c1c		$darkblue		$darkblack
-client.focused_inactive	#d65d0e			#fe8019		#1c1c1c		$darkblue		$darkblack
+client.focused_inactive	#6314ff			#5600ff		#1c1c1c		$darkblue		$darkblack
 client.urgent			$darkred		$darkred	$black		$darkred		$darkred
 client.background 		$black
 
@@ -67,7 +71,7 @@ bar {
 			background #1c1c1c
 			statusline $darkwhite
 			separator $cyan
-                focused_workspace  #d65d0e #fe8019 #1c1c1c
+                focused_workspace  #6e19ff #6e19ff #1c1c1c
         		active_workspace   $blue $blue $darkwhite
       			inactive_workspace $darkblack $darkblack $white
         		urgent_workspace   $darkblack $darkblack $white
@@ -112,8 +116,6 @@ bindsym $mod+i 			exec $term -e htop
 bindsym $mod+Shift+i		exec --no-startup-id "bash ~/.scripts/i3resize up"
 
 bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
-
-bindsym $mod+Shift+a		exec --no-startup-id gnome-alsamixer
 
 bindsym $mod+d			exec --no-startup-id rofi -mode "run#window#drun" -show\
 						drun -matching regex -show-icons -theme softsidebar\
@@ -221,12 +223,12 @@ bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
 bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
 # For screenshots and recording
-bindsym $mod+Shift+s 			exec --no-startup-id gnome-screenshot
-bindsym Shift+Print 		exec --no-startup-id scrot -u
-bindsym $mod+Print		exec --no-startup-id dmenurecord
+bindsym $mod+Shift+a        exec --no-startup-id gnome-screenshot -a
+bindsym $mod+Shift+s        exec --no-startup-id gnome-screenshot
+bindsym $mod+Print          exec --no-startup-id dmenurecord
 bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
-bindsym $mod+Delete		exec $stoprec
-bindsym XF86Launch1		exec $stoprec & xset dpms force off
+bindsym $mod+Delete         exec $stoprec
+bindsym XF86Launch1         exec $stoprec & xset dpms force off
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -248,3 +250,7 @@ bindsym $mod+F9	exec --no-startup-id i3lock --ringcolor=b88005aa \\
 
 # Turn off screen
 bindsym $mod+F8 exec --no-startup-id xset dpms force off
+
+
+# Experimenting
+for_window [class="Terminator"] border none
