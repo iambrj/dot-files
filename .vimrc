@@ -1,6 +1,4 @@
-if has('python3')
-endif
-" Vundle
+set termguicolors
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,17 +7,22 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'lervag/vimtex'
-Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
+Plugin 'dracula/vim'
+Plugin 'relastle/bluewery.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'neovimhaskell/haskell-vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'dracula/vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'chrisbra/csv.vim'
+Plugin 'chrisbra/unicode.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'prettier/vim-prettier'
+Plugin 'whonore/Coqtail' | Plugin 'let-def/vimbufsync'
 call vundle#end()
 
-colorscheme dracula
+colorscheme bluewery
 
 " Remap autocomplete to ctrl-space
 if has("gui_running")
@@ -30,16 +33,6 @@ else
   else
   endif
 endif
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Prolog
 if version < 600
@@ -219,7 +212,6 @@ let g:airline_symbols.readonly = 'î‚¢'
 let g:airline_symbols.linenr = 'î‚¡'
 
 " Config starts here
-set background=dark
 filetype plugin indent on
 syntax on
 set tabstop=4 shiftwidth=4 expandtab
@@ -230,7 +222,6 @@ set relativenumber
 set splitbelow
 set splitright
 "set laststatus=2
-set spell
 set textwidth=80
 set nofoldenable
 set whichwrap+=<,>,h,l,[,] " go to next/previous line from end/beginning
@@ -265,6 +256,9 @@ autocmd FileType java set cindent
 " .md files
 autocmd FileType md set textwidth=80
 
+" .hs files
+autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
@@ -293,8 +287,20 @@ autocmd BufNewFile *.cpp 0r ~/.vim/skeletons/skeleton.cpp
 autocmd BufNewFile *.c 0r ~/.vim/skeletons/skeleton.c
 
 " Match vim background with terminal background
-hi Normal ctermbg=234
+hi Normal guibg=NONE ctermbg=NONE
 
 set scrolloff=9
 set incsearch
 set mouse=a
+:packadd termdebug
+
+" Literate haskell macros
+let @x='"€ýa`>o]€kb\end{code]€kb}`<O\begin{code}€ýaO'
+
+" Coq config
+imap <C-L> \cl
+imap <C-J> \cj
+imap <C-K> \ck
+map <C-L> \cl
+map <C-J> \cj
+map <C-K> \ck
