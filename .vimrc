@@ -221,10 +221,11 @@ set hlsearch
 set relativenumber
 set splitbelow
 set splitright
-"set laststatus=2
 set textwidth=80
 set nofoldenable
 set whichwrap+=<,>,h,l,[,] " go to next/previous line from end/beginning
+set cursorcolumn
+set cursorline
 
 " shortcut to move among splits
 map <C-h> <C-w>h
