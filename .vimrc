@@ -226,6 +226,11 @@ set nofoldenable
 set whichwrap+=<,>,h,l,[,] " go to next/previous line from end/beginning
 set cursorcolumn
 set cursorline
+set wildmenu
+set smartcase
+set scrolloff=9
+set incsearch
+set mouse=a
 
 " shortcut to move among splits
 map <C-h> <C-w>h
@@ -254,9 +259,6 @@ autocmd FileType java ab Sys System
 autocmd FileType java ab pr print
 autocmd FileType java set cindent
 
-" .md files
-autocmd FileType md set textwidth=80
-
 " .hs files
 autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -277,6 +279,9 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" Toggle search highlight
+nnoremap <C-h> :noh<cr>
+
 " Enable IndentGuide on startup
 " let g:indent_guides_enable_on_vim_startup = 1
 
@@ -290,18 +295,15 @@ autocmd BufNewFile *.c 0r ~/.vim/skeletons/skeleton.c
 " Match vim background with terminal background
 hi Normal guibg=NONE ctermbg=NONE
 
-set scrolloff=9
-set incsearch
-set mouse=a
 :packadd termdebug
 
 " Literate haskell macros
 let @x='"€ýa`>o]€kb\end{code]€kb}`<O\begin{code}€ýaO'
 
 " Coq config
-imap <C-L> \cl
-imap <C-J> \cj
-imap <C-K> \ck
-map <C-L> \cl
-map <C-J> \cj
-map <C-K> \ck
+autocmd FileType v imap <C-L> \cl
+autocmd FileType v imap <C-J> \cj
+autocmd FileType v imap <C-K> \ck
+autocmd FileType v map <C-L> \cl
+autocmd FileType v map <C-J> \cj
+autocmd FileType v map <C-K> \ck
