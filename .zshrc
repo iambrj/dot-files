@@ -105,6 +105,7 @@ alias v="vim"
 alias g="gcc"
 alias up="cd .."
 alias c="cd"
+alias p="python"
 alias connect="rclone --vfs-cache-mode writes mount iiit: ~/iiit &"
 alias qemu="qemu-system-x86_64"
 alias h="history | tail"
@@ -127,9 +128,16 @@ bindkey "^U" backward-kill-line
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-JAVA_HOME="/usr/lib/jvm/default"
+JAVA_HOME="/usr/lib/jvm/java-13-openjdk"
 CLASSPATH=.:"${JAVA_HOME}/lib/dt.jar":"${JAVA_HOME}/lib/tools.jar"
 CHECKERFRAMEWORK="/home/hogfather/temp/checker-framework"
 alias javacheck='$CHECKERFRAMEWORK/checker/bin/javac'
 eval "$(fasd --init auto)"
-alias i="vim ~/docs/til/README.md; git --git-dir ~/docs/til/.git commit -a"
+alias i="vim ~/docs/blog/README.md"
+alias gmm='gww -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG'
+alias gww='g++ -Wall -Weffc++ -pedantic   -pedantic-errors -Wextra -Wcast-align  -Wcast-qual -Wconversion  -Wdisabled-optimization  -Wfloat-equal -Wformat=2  -Wformat-nonliteral -Wformat-security   -Wformat-y2k  -Wimport  -Winit-self  -Winline  -Winvalid-pch    -Wmissing-field-initializers -Wmissing-format-attribute    -Wmissing-include-dirs -Wmissing-noreturn  -Wpacked  -Wpointer-arith  -Wredundant-decls  -Wshadow -Wstack-protector  -Wstrict-aliasing=2 -Wswitch-default  -Wswitch-enum  -Wunreachable-code -Wunused  -Wunused-but-set-variable  -Wunused-parameter  -Wvariadic-macros  -Wwrite-strings'
+export PATH="/home/hogfather/bin:$PATH"
+BROWSER=chromium
+mcd () { mkdir -p $1; cd $1 }
+cdl () { cd $1; ls}
+rtfm() { help $@ || man $@ || chromium "http://www.google.com/search?q=$@"; }
