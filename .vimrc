@@ -26,6 +26,7 @@ Plugin 'vim-scripts/SearchComplete'
 Plugin 'elmcast/elm-vim'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 colorscheme bluewery
@@ -46,8 +47,8 @@ if has("autocmd")
   au filetype racket set lisp
   au filetype racket set autoindent
 endif
+autocmd Filetype racket setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
-" Rainbow-Paren Config
 " Rainbow-Paren Config
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
