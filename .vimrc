@@ -46,6 +46,7 @@ if has("autocmd")
   au BufReadPost *.rkt,*.rktl set filetype=racket
   au filetype racket set lisp
   au filetype racket set autoindent
+  au Filetype racket let b:AutoPairs = {'(':')', '[':']', '{':'}', '"':'"', '```':'```', '"""':'"""', "'''":"'''"}
 endif
 autocmd Filetype racket setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
